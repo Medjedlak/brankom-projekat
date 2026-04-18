@@ -1558,3 +1558,29 @@ img{
         transform: translateX(-50%);
     }
 }
+
+.main-footer_bg {
+    /* Osigurava da div zauzme celu širinu */
+    width: 100%;
+    
+    /* DEFINIŠI VISINU - bez ovoga se slika na telefonu neće videti */
+    min-height: 300px; 
+    
+    /* Centriranje i skaliranje slike */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Opciono: ako želiš da bude u pozadini svega */
+    position: relative;
+}
+
+/* Ako želiš da overlay (sloj preko slike) radi */
+.overlay-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Zatamnjuje sliku za 50% */
+}

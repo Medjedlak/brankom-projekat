@@ -52,18 +52,18 @@
 
 .header-info_list li a{
 	position:relative;
-	color: var(--black-color);
+	color: var(--white-color);
 }
 
 .header-info_list li a:hover{
-	color: var(--white-color);
+	color: var(--black-color);
 }
 
 .header-top .address{
 	position:relative;
 	font-size: 16px;
 	font-weight: 500;
-	color: var(--black-color);
+	color: var(--white-color);
 }
 
 .header-top .address span{

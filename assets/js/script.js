@@ -372,21 +372,15 @@
 	var slider = new Swiper('.main-slider', {
 		slidesPerView: 1,
 		spaceBetween: 0,
-		loop: true,
-		autoplay: {
-			enabled: true,
-			delay: 6000,
-		},
+		loop: false,
+		autoplay: false,
 		// Navigation arrows
 		navigation: {
-			nextEl: '.main-slider-next',
-			prevEl: '.main-slider-prev',
-			clickable: true,
 		},
 		//Pagination
 		pagination: {
 			el: ".slider-one_pagination",
-			clickable: true,
+			clickable: false,
 			renderBullet: function (index, className) {
         let formattedIndex = (index + 1).toString().padStart(2, '0'); // Ensures two-digit format
         return '<span class="' + className + '">' + formattedIndex + "</span>";
@@ -1154,6 +1148,25 @@
 		wow.init();
 	}
 	
+window.onscroll = function() {
+    const floatingDiv = document.querySelector(".floating-contact");
+    
+    // Ako je korisnik skrolovao više od 100 piksela od vrha
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        floatingDiv.classList.add("active");
+    } else {
+        floatingDiv.classList.remove("active");
+    }
+};
+
+// DODAJ OVO: Funkcija koja zapravo skroluje na vrh kad se klikne na strelicu
+document.getElementById("back-to-top").addEventListener("click", function(e) {
+    e.preventDefault(); // Sprečava da se doda # u URL
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth" // Lagano skrolovanje, ne nagli skok
+    });
+});
 
 
 /* ==========================================================================
